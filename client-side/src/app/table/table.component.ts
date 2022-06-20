@@ -46,7 +46,8 @@ export class TableComponent implements OnInit {
   getUsers() {
     this.httpRequestService.get().subscribe(Response => {
       this.users = Response;
-     
+      console.log(this.users)
+
     })
   }
 

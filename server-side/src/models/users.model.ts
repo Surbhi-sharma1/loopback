@@ -1,13 +1,13 @@
-import {belongsTo, Entity, model, property} from '@loopback/repository';
-import {Customer} from './customer.model';
-import {Role} from './role.model';
+import { belongsTo, Entity, model, property } from '@loopback/repository';
+import { Customer } from './customer.model';
+import { Role } from './role.model';
 
 @model({
-  name: 'usertable'
+  name: 'pusers'
 },
 )
 export class Users extends Entity {
-  @belongsTo(() => Customer, {name: 'customer'}, {keyTo: 'customerid', name: 'customerid'})
+  @belongsTo(() => Customer, { name: 'customer' }, { keyTo: 'customerid', name: 'customerid' })
   customerid: number;
   @property({
     type: 'number',
@@ -46,9 +46,9 @@ export class Users extends Entity {
     required: true,
   })
   phone: string;
-  @belongsTo(() => Role, {name: 'role'}, {keyTo: 'name', name: 'role'})
+  @belongsTo(() => Role, { name: 'role' }, { keyTo: 'name', name: 'role' })
   roleName: string;
-  @belongsTo(() => Customer, {name: 'customer'}, {keyTo: 'name', name: 'customername'})
+  @belongsTo(() => Customer, { name: 'customer' }, { keyTo: 'name', name: 'customername' })
   customerName: string;
 
   @property({

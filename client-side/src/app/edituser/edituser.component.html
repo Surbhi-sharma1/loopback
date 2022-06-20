@@ -1,10 +1,20 @@
+<br>
+<br>
+<br>
+
 <h2>EDIT USER</h2>
 <div class="container-lg">
     <form [formGroup]="editForm" (ngSubmit)="onSubmit()" autocomplete="off">
         <div class="formGroup">
-            <label for="customerid">Customer ID</label>
-            <input class="form-control" id="customerid" formControlName="customerid" [readonly]="!editable">
+            <label for="customerid">Customer </label>
 
+            <select formControlName="customerid">
+                <option *ngFor="let customer of customerList" [value]="customer.customerid">
+                    {{ customer.name }}
+
+                </option>
+
+            </select>
         </div>
         <div class="formGroup">
             <label for="id">Employee ID</label>
@@ -87,17 +97,7 @@
                     </div>
                 </div>
             </div>
-            <div class="formGroup">
-                <label for="customerName">Customer Name</label>
-                <input class="form-control" id="customerName" formControlName="customerName">
 
-                <div *ngIf="editForm.controls['customerName'].invalid && (editForm.controls['customerName'].dirty || editForm.controls['customerName'].touched)"
-                    class="alert alert-danger">
-                    <div *ngIf="editForm.controls['CustomerName'].errors?.['required']">
-                        *Customer is required!
-                    </div>
-                </div>
-            </div>
 
             <div class="formGroup">
                 <label for="Address">Address </label>

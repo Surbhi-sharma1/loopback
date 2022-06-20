@@ -1,4 +1,7 @@
 <div class="panel-body">
+    <br>
+    <br>
+    <br>
     <h2>User Data</h2>
     <table class="table table-bordered">
         <tr>
@@ -20,7 +23,7 @@
             <tr *ngFor="let user of users">
                 <td>{{user.id}}</td>
                 <td>{{user.firstname}}</td>
-                <td>{{user.middlename?'':'-'}}</td>
+                <td>{{user.middlename}}</td>
                 <td>{{user.lastname}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.phone}}</td>

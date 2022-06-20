@@ -9,8 +9,7 @@ import { map, Observable, throwError } from 'rxjs';
 })
 export class HTTPServiceRequest {
     data: any = [];
-    user: any = [];
-    data1: any = []
+    data1: any = [];
     idInt: number | undefined;
 
     url = 'http://localhost:3000/';
@@ -73,9 +72,13 @@ export class HTTPServiceRequest {
     onDelete(id: number) {
         return this.http.delete<User>('http://localhost:3000/users/' + `${id}`);
     }
+    getCustomerById(id: number) {
+        const url = 'http://localhost:3000/customers/';
+        return this.http.get(url + id);
+    }
     updateUser(user: User) {
-        const url = 'http://localhost:3000/users/';
 
+        const url = 'http://localhost:3000/users/';
         return this.http.put<User>(url + user.id, user, this.httpOptions);
     }
     createUser(data: User) {
